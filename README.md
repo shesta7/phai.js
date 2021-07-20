@@ -20,8 +20,20 @@ __POST__
       //do something with result
   });
   ```
+  ____
+  ### Error handling
   
+  When response contains isSuccess === false you can handle error by passing errorHandler callback function:
+  ```js
+  phai.get('/api/get', myCallback(res), function (error) {
+    //do something with error 
+    });
+  ```
   ____
   
   You can set loader object with start() and stop() methods, which start loading when get or post request is sending
   
+```js
+  phai.loader = mySuperLoader
+```
+
