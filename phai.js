@@ -29,7 +29,7 @@
             });
     },
 
-    get: function (path, callback) {
+    get: function (path, callback, errorHandler) {
         var ph = this;
         if (ph.loader)
             ph.loader.start();
