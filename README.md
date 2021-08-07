@@ -6,12 +6,15 @@ Simple http client based on fetch
 ## How to use:
 
 __GET__
-```js
+  ```js
   phai.get('/api/get', function (result) {
       console.log(result);
       //do something with result
   });
-```
+  ```
+  ```js
+  phai.get('/api/get', (r) => { myResultHandler(r) } );
+  ```
 
 __POST__
   ```js
@@ -19,6 +22,10 @@ __POST__
       console.log(result);
       //do something with result
   });
+  ```
+  
+  ```js
+  phai.post('/api/post', data, (r) => { myResultHandler(r)});
   ```
   ____
   ### Error handling
