@@ -50,5 +50,16 @@
                 if (ph.loader)
                     ph.loader.stop();
             });
-        }
+        },
+     
+        getText: function (path, onSuccess, onError, beforeSend, afterExecuted) {
+            beforeSend();
+            fetch(path)
+                .then((rsp) => { return rsp.text() })
+                .then((r) => {
+                    onSuccess(r);
+                })
+                .catch((e) => { if (onError) onError(e) })
+                .finally(() => { if (afterExecuted) afterExecuted();})
+    }
 }
