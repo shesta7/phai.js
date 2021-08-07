@@ -13,7 +13,7 @@ __GET__
   });
   ```
   ```js
-  phai.get('/api/get', (r) => { myResultHandler(r) } );
+  phai.get('/api/get', (r) => myResultHandler(r) );
   ```
 
 __POST__
@@ -25,16 +25,14 @@ __POST__
   ```
   
   ```js
-  phai.post('/api/post', data, (r) => { myResultHandler(r)});
+  phai.post('/api/post', data, (r) => myResultHandler(r));
   ```
   ____
   ### Error handling
   
   When response contains isSuccess === false you can handle error by passing errorHandler callback function:
   ```js
-  phai.get('/api/get', myCallback(res), function (error) {
-    //do something with error 
-    });
+  phai.get('/api/get', (r) => myResultHandler(r), (e) => myErrorHandler(e));
   ```
   ____
   
